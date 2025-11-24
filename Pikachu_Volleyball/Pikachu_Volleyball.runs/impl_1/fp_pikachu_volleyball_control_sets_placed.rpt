@@ -1,0 +1,91 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Nov 24 23:58:48 2025
+| Host         : LAPTOP-4R2C46QK running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file fp_pikachu_volleyball_control_sets_placed.rpt
+| Design       : fp_pikachu_volleyball
+| Device       : xc7a35ti
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    58 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    13 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              39 |           16 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             125 |           40 |
+| Yes          | No                    | No                     |              10 |            4 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              32 |           18 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+-----------------------------+---------------------------------+------------------+----------------+--------------+
+|         Clock Signal        |        Enable Signal        |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+-----------------------------+---------------------------------+------------------+----------------+--------------+
+|  clk_divider0/clk_out_reg_0 |                             |                                 |                1 |              1 |         1.00 |
+|  clk_divider0/clk_out_reg_0 |                             | vs0/sram_we                     |                2 |              2 |         1.00 |
+|  clk_IBUF_BUFG              |                             | clk_divider0/counter[7]_i_1_n_0 |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG              | pikachu_usr_hpos[9]_i_1_n_0 |                                 |                4 |             10 |         2.50 |
+|  clk_divider0/clk_out_reg_0 | vs0/pixel_tick              | vs0/clear                       |                3 |             10 |         3.33 |
+|  clk_divider0/clk_out_reg_0 | vs0/E[0]                    | vs0/SR[0]                       |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG              | vs0/pixel_tick              | vs0/mod2_reg_reg_0[0]           |               11 |             12 |         1.09 |
+|  clk_IBUF_BUFG              |                             | db3/hold_3_reg[19]              |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG              |                             | db0/hold_0_reg[19]              |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG              |                             | db3/counter[0]_i_1__1_n_0       |                6 |             21 |         3.50 |
+|  clk_IBUF_BUFG              |                             | db0/counter[0]_i_1__0_n_0       |                6 |             21 |         3.50 |
+|  clk_IBUF_BUFG              |                             | vs0/sram_we                     |               13 |             33 |         2.54 |
+|  clk_IBUF_BUFG              |                             |                                 |               15 |             38 |         2.53 |
++-----------------------------+-----------------------------+---------------------------------+------------------+----------------+--------------+
+
+

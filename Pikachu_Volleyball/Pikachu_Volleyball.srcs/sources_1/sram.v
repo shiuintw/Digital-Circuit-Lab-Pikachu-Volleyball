@@ -6,7 +6,7 @@
 // must match the size of the sram block exactly.
 
 module sram
-#(parameter DATA_WIDTH = 8, ADDR_WIDTH = 16, RAM_SIZE = 65536)
+#(parameter DATA_WIDTH = 8, ADDR_WIDTH = 16, RAM_SIZE = 65536, FILE_NAME = "images.mem")
  (input clk, input we, input en,
   input  [ADDR_WIDTH-1 : 0] addr,
   input  [DATA_WIDTH-1 : 0] data_i,
@@ -22,7 +22,7 @@ integer idx;
 // ------------------------------------
 // Initialize the sram cells with the values defined in "image.dat."
 initial begin
-    $readmemh("images.mem", RAM);
+    $readmemh(FILE_NAME, RAM);
 end
 
 // ------------------------------------
