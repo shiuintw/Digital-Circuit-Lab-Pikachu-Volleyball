@@ -1,0 +1,1540 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Dec  1 22:53:23 2025
+| Host         : DESKTOP-QI6PHOU running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file fp_pikachu_volleyball_timing_summary_routed.rpt -pb fp_pikachu_volleyball_timing_summary_routed.pb -rpx fp_pikachu_volleyball_timing_summary_routed.rpx -warn_on_violation
+| Design       : fp_pikachu_volleyball
+| Device       : 7a35ti-csg324
+| Speed File   : -1L  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                                                Violations  
+---------  ----------------  ---------------------------------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell                                24          
+SYNTH-5    Warning           Mapped onto distributed RAM because of timing constraints  108         
+SYNTH-6    Warning           Timing of a RAM block might be sub-optimal                 38          
+TIMING-18  Warning           Missing input or output delay                              21          
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (24)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (79)
+5. checking no_input_delay (8)
+6. checking no_output_delay (14)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (24)
+-------------------------
+ There are 24 register/latch pins with no clock driven by root clock pin: clk_divider0/clk_out_reg/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (79)
+-------------------------------------------------
+ There are 79 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (8)
+------------------------------
+ There are 8 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (14)
+--------------------------------
+ There are 14 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.912        0.000                      0                 5786        0.068        0.000                      0                 5786        3.750        0.000                       0                   935  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin         0.912        0.000                      0                 5786        0.068        0.000                      0                 5786        3.750        0.000                       0                   935  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.912ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.068ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.750ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.912ns  (required time - arrival time)
+  Source:                 pikachu_opp_hpos_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ball_vspeed_reg[3]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.495ns  (logic 2.349ns (27.651%)  route 6.146ns (72.349%))
+  Logic Levels:           9  (CARRY4=1 LUT2=2 LUT4=1 LUT5=3 LUT6=2)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.106ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.554     5.106    clk_IBUF_BUFG
+    SLICE_X10Y22         FDRE                                         r  pikachu_opp_hpos_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y22         FDRE (Prop_fdre_C_Q)         0.518     5.624 r  pikachu_opp_hpos_reg[1]/Q
+                         net (fo=45, routed)          0.894     6.518    db1/ball_hdir_i_23[1]
+    SLICE_X8Y22          LUT6 (Prop_lut6_I2_O)        0.124     6.642 r  db1/ball_hdir_i_44/O
+                         net (fo=12, routed)          0.696     7.338    db1/pikachu_opp_hpos_reg[5]
+    SLICE_X9Y22          LUT4 (Prop_lut4_I1_O)        0.152     7.490 r  db1/ball_hdir_i_42/O
+                         net (fo=7, routed)           0.835     8.325    db1/pikachu_opp_hpos_reg[6]
+    SLICE_X3Y23          LUT2 (Prop_lut2_I0_O)        0.332     8.657 r  db1/ball_hspeed[2]_i_87/O
+                         net (fo=1, routed)           0.000     8.657    db1/ball_hspeed[2]_i_87_n_0
+    SLICE_X3Y23          CARRY4 (Prop_carry4_S[0]_O[1])
+                                                      0.424     9.081 f  db1/ball_hspeed_reg[2]_i_26/O[1]
+                         net (fo=1, routed)           0.717     9.799    db1/ball_hspeed_reg[2]_i_26_n_6
+    SLICE_X3Y24          LUT5 (Prop_lut5_I1_O)        0.303    10.102 f  db1/ball_hspeed[2]_i_11/O
+                         net (fo=1, routed)           0.714    10.816    db1/ball_hspeed[2]_i_11_n_0
+    SLICE_X2Y20          LUT5 (Prop_lut5_I1_O)        0.124    10.940 r  db1/ball_hspeed[2]_i_4/O
+                         net (fo=4, routed)           0.631    11.571    db1/h_touch_opp
+    SLICE_X2Y19          LUT5 (Prop_lut5_I0_O)        0.124    11.695 r  db1/ball_hspeed[3]_i_3/O
+                         net (fo=7, routed)           0.532    12.227    db1/opp_smash
+    SLICE_X2Y19          LUT6 (Prop_lut6_I5_O)        0.124    12.351 r  db1/ball_vspeed[5]_i_1/O
+                         net (fo=7, routed)           0.597    12.948    db1/ball_vspeed
+    SLICE_X8Y19          LUT2 (Prop_lut2_I1_O)        0.124    13.072 r  db1/ball_vspeed[4]_i_1/O
+                         net (fo=2, routed)           0.529    13.601    db1_n_7
+    SLICE_X8Y19          FDRE                                         r  ball_vspeed_reg[3]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y19          FDRE                                         r  ball_vspeed_reg[3]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y19          FDRE (Setup_fdre_C_R)       -0.524    14.513    ball_vspeed_reg[3]
+  -------------------------------------------------------------------
+                         required time                         14.513    
+                         arrival time                         -13.601    
+  -------------------------------------------------------------------
+                         slack                                  0.912    
+
+Slack (MET) :             0.912ns  (required time - arrival time)
+  Source:                 pikachu_opp_hpos_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ball_vspeed_reg[4]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.495ns  (logic 2.349ns (27.651%)  route 6.146ns (72.349%))
+  Logic Levels:           9  (CARRY4=1 LUT2=2 LUT4=1 LUT5=3 LUT6=2)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.106ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.554     5.106    clk_IBUF_BUFG
+    SLICE_X10Y22         FDRE                                         r  pikachu_opp_hpos_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y22         FDRE (Prop_fdre_C_Q)         0.518     5.624 r  pikachu_opp_hpos_reg[1]/Q
+                         net (fo=45, routed)          0.894     6.518    db1/ball_hdir_i_23[1]
+    SLICE_X8Y22          LUT6 (Prop_lut6_I2_O)        0.124     6.642 r  db1/ball_hdir_i_44/O
+                         net (fo=12, routed)          0.696     7.338    db1/pikachu_opp_hpos_reg[5]
+    SLICE_X9Y22          LUT4 (Prop_lut4_I1_O)        0.152     7.490 r  db1/ball_hdir_i_42/O
+                         net (fo=7, routed)           0.835     8.325    db1/pikachu_opp_hpos_reg[6]
+    SLICE_X3Y23          LUT2 (Prop_lut2_I0_O)        0.332     8.657 r  db1/ball_hspeed[2]_i_87/O
+                         net (fo=1, routed)           0.000     8.657    db1/ball_hspeed[2]_i_87_n_0
+    SLICE_X3Y23          CARRY4 (Prop_carry4_S[0]_O[1])
+                                                      0.424     9.081 f  db1/ball_hspeed_reg[2]_i_26/O[1]
+                         net (fo=1, routed)           0.717     9.799    db1/ball_hspeed_reg[2]_i_26_n_6
+    SLICE_X3Y24          LUT5 (Prop_lut5_I1_O)        0.303    10.102 f  db1/ball_hspeed[2]_i_11/O
+                         net (fo=1, routed)           0.714    10.816    db1/ball_hspeed[2]_i_11_n_0
+    SLICE_X2Y20          LUT5 (Prop_lut5_I1_O)        0.124    10.940 r  db1/ball_hspeed[2]_i_4/O
+                         net (fo=4, routed)           0.631    11.571    db1/h_touch_opp
+    SLICE_X2Y19          LUT5 (Prop_lut5_I0_O)        0.124    11.695 r  db1/ball_hspeed[3]_i_3/O
+                         net (fo=7, routed)           0.532    12.227    db1/opp_smash
+    SLICE_X2Y19          LUT6 (Prop_lut6_I5_O)        0.124    12.351 r  db1/ball_vspeed[5]_i_1/O
+                         net (fo=7, routed)           0.597    12.948    db1/ball_vspeed
+    SLICE_X8Y19          LUT2 (Prop_lut2_I1_O)        0.124    13.072 r  db1/ball_vspeed[4]_i_1/O
+                         net (fo=2, routed)           0.529    13.601    db1_n_7
+    SLICE_X8Y19          FDRE                                         r  ball_vspeed_reg[4]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y19          FDRE                                         r  ball_vspeed_reg[4]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y19          FDRE (Setup_fdre_C_R)       -0.524    14.513    ball_vspeed_reg[4]
+  -------------------------------------------------------------------
+                         required time                         14.513    
+                         arrival time                         -13.601    
+  -------------------------------------------------------------------
+                         slack                                  0.912    
+
+Slack (MET) :             1.066ns  (required time - arrival time)
+  Source:                 pikachu_usr_vpos_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixel_addr_pikachu_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.966ns  (logic 3.996ns (44.568%)  route 4.970ns (55.432%))
+  Logic Levels:           11  (CARRY4=6 LUT4=2 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.815ns = ( 14.815 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.116ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.564     5.116    clk_IBUF_BUFG
+    SLICE_X10Y15         FDSE                                         r  pikachu_usr_vpos_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y15         FDSE (Prop_fdse_C_Q)         0.518     5.634 r  pikachu_usr_vpos_reg[6]/Q
+                         net (fo=19, routed)          1.264     6.898    vs0/usr_y_pixel_count_reg[5]
+    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     7.022 r  vs0/pixel_addr_pikachu[13]_i_116/O
+                         net (fo=3, routed)           0.686     7.708    vs0/pixel_addr_pikachu[13]_i_116_n_0
+    SLICE_X11Y29         LUT5 (Prop_lut5_I3_O)        0.124     7.832 r  vs0/pixel_addr_pikachu[13]_i_68/O
+                         net (fo=1, routed)           0.000     7.832    vs0/pixel_addr_pikachu[13]_i_68_n_0
+    SLICE_X11Y29         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.323 f  vs0/pixel_addr_pikachu_reg[13]_i_26/CO[1]
+                         net (fo=15, routed)          1.069     9.391    vs0/pixel_addr_pikachu_reg[13]_i_26_n_2
+    SLICE_X5Y28          LUT4 (Prop_lut4_I3_O)        0.355     9.746 r  vs0/pixel_addr_pikachu[13]_i_7/O
+                         net (fo=42, routed)          0.772    10.518    vs0/pikachu_usr_region
+    SLICE_X7Y26          CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.803    11.321 r  vs0/pixel_addr_pikachu_reg[7]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    11.321    vs0/pixel_addr_pikachu_reg[7]_i_10_n_0
+    SLICE_X7Y27          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.655 r  vs0/pixel_addr_pikachu_reg[11]_i_10/O[1]
+                         net (fo=2, routed)           0.652    12.307    vs0/pixel_addr_pikachu_reg[11]_i_10_n_6
+    SLICE_X9Y29          LUT4 (Prop_lut4_I2_O)        0.303    12.610 r  vs0/pixel_addr_pikachu[7]_i_3/O
+                         net (fo=2, routed)           0.528    13.138    vs0/pixel_addr_pikachu[7]_i_3_n_0
+    SLICE_X8Y29          LUT6 (Prop_lut6_I0_O)        0.124    13.262 r  vs0/pixel_addr_pikachu[7]_i_7/O
+                         net (fo=1, routed)           0.000    13.262    vs0/pixel_addr_pikachu[7]_i_7_n_0
+    SLICE_X8Y29          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.642 r  vs0/pixel_addr_pikachu_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.642    vs0/pixel_addr_pikachu_reg[7]_i_1_n_0
+    SLICE_X8Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    13.759 r  vs0/pixel_addr_pikachu_reg[11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.759    vs0/pixel_addr_pikachu_reg[11]_i_1_n_0
+    SLICE_X8Y31          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    14.082 r  vs0/pixel_addr_pikachu_reg[13]_i_2/O[1]
+                         net (fo=1, routed)           0.000    14.082    pixel_addr_pikachu[13]
+    SLICE_X8Y31          FDRE                                         r  pixel_addr_pikachu_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.443    14.815    clk_IBUF_BUFG
+    SLICE_X8Y31          FDRE                                         r  pixel_addr_pikachu_reg[13]/C
+                         clock pessimism              0.259    15.074    
+                         clock uncertainty           -0.035    15.038    
+    SLICE_X8Y31          FDRE (Setup_fdre_C_D)        0.109    15.147    pixel_addr_pikachu_reg[13]
+  -------------------------------------------------------------------
+                         required time                         15.147    
+                         arrival time                         -14.082    
+  -------------------------------------------------------------------
+                         slack                                  1.066    
+
+Slack (MET) :             1.170ns  (required time - arrival time)
+  Source:                 pikachu_usr_vpos_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixel_addr_pikachu_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.862ns  (logic 3.892ns (43.917%)  route 4.970ns (56.083%))
+  Logic Levels:           11  (CARRY4=6 LUT4=2 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.815ns = ( 14.815 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.116ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.564     5.116    clk_IBUF_BUFG
+    SLICE_X10Y15         FDSE                                         r  pikachu_usr_vpos_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y15         FDSE (Prop_fdse_C_Q)         0.518     5.634 r  pikachu_usr_vpos_reg[6]/Q
+                         net (fo=19, routed)          1.264     6.898    vs0/usr_y_pixel_count_reg[5]
+    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     7.022 r  vs0/pixel_addr_pikachu[13]_i_116/O
+                         net (fo=3, routed)           0.686     7.708    vs0/pixel_addr_pikachu[13]_i_116_n_0
+    SLICE_X11Y29         LUT5 (Prop_lut5_I3_O)        0.124     7.832 r  vs0/pixel_addr_pikachu[13]_i_68/O
+                         net (fo=1, routed)           0.000     7.832    vs0/pixel_addr_pikachu[13]_i_68_n_0
+    SLICE_X11Y29         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.323 f  vs0/pixel_addr_pikachu_reg[13]_i_26/CO[1]
+                         net (fo=15, routed)          1.069     9.391    vs0/pixel_addr_pikachu_reg[13]_i_26_n_2
+    SLICE_X5Y28          LUT4 (Prop_lut4_I3_O)        0.355     9.746 r  vs0/pixel_addr_pikachu[13]_i_7/O
+                         net (fo=42, routed)          0.772    10.518    vs0/pikachu_usr_region
+    SLICE_X7Y26          CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.803    11.321 r  vs0/pixel_addr_pikachu_reg[7]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    11.321    vs0/pixel_addr_pikachu_reg[7]_i_10_n_0
+    SLICE_X7Y27          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.655 r  vs0/pixel_addr_pikachu_reg[11]_i_10/O[1]
+                         net (fo=2, routed)           0.652    12.307    vs0/pixel_addr_pikachu_reg[11]_i_10_n_6
+    SLICE_X9Y29          LUT4 (Prop_lut4_I2_O)        0.303    12.610 r  vs0/pixel_addr_pikachu[7]_i_3/O
+                         net (fo=2, routed)           0.528    13.138    vs0/pixel_addr_pikachu[7]_i_3_n_0
+    SLICE_X8Y29          LUT6 (Prop_lut6_I0_O)        0.124    13.262 r  vs0/pixel_addr_pikachu[7]_i_7/O
+                         net (fo=1, routed)           0.000    13.262    vs0/pixel_addr_pikachu[7]_i_7_n_0
+    SLICE_X8Y29          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.642 r  vs0/pixel_addr_pikachu_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.642    vs0/pixel_addr_pikachu_reg[7]_i_1_n_0
+    SLICE_X8Y30          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    13.759 r  vs0/pixel_addr_pikachu_reg[11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.759    vs0/pixel_addr_pikachu_reg[11]_i_1_n_0
+    SLICE_X8Y31          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219    13.978 r  vs0/pixel_addr_pikachu_reg[13]_i_2/O[0]
+                         net (fo=1, routed)           0.000    13.978    pixel_addr_pikachu[12]
+    SLICE_X8Y31          FDRE                                         r  pixel_addr_pikachu_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.443    14.815    clk_IBUF_BUFG
+    SLICE_X8Y31          FDRE                                         r  pixel_addr_pikachu_reg[12]/C
+                         clock pessimism              0.259    15.074    
+                         clock uncertainty           -0.035    15.038    
+    SLICE_X8Y31          FDRE (Setup_fdre_C_D)        0.109    15.147    pixel_addr_pikachu_reg[12]
+  -------------------------------------------------------------------
+                         required time                         15.147    
+                         arrival time                         -13.978    
+  -------------------------------------------------------------------
+                         slack                                  1.170    
+
+Slack (MET) :             1.182ns  (required time - arrival time)
+  Source:                 pikachu_usr_vpos_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixel_addr_pikachu_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.849ns  (logic 3.879ns (43.835%)  route 4.970ns (56.165%))
+  Logic Levels:           10  (CARRY4=5 LUT4=2 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.043ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.116ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.564     5.116    clk_IBUF_BUFG
+    SLICE_X10Y15         FDSE                                         r  pikachu_usr_vpos_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y15         FDSE (Prop_fdse_C_Q)         0.518     5.634 r  pikachu_usr_vpos_reg[6]/Q
+                         net (fo=19, routed)          1.264     6.898    vs0/usr_y_pixel_count_reg[5]
+    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     7.022 r  vs0/pixel_addr_pikachu[13]_i_116/O
+                         net (fo=3, routed)           0.686     7.708    vs0/pixel_addr_pikachu[13]_i_116_n_0
+    SLICE_X11Y29         LUT5 (Prop_lut5_I3_O)        0.124     7.832 r  vs0/pixel_addr_pikachu[13]_i_68/O
+                         net (fo=1, routed)           0.000     7.832    vs0/pixel_addr_pikachu[13]_i_68_n_0
+    SLICE_X11Y29         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.323 f  vs0/pixel_addr_pikachu_reg[13]_i_26/CO[1]
+                         net (fo=15, routed)          1.069     9.391    vs0/pixel_addr_pikachu_reg[13]_i_26_n_2
+    SLICE_X5Y28          LUT4 (Prop_lut4_I3_O)        0.355     9.746 r  vs0/pixel_addr_pikachu[13]_i_7/O
+                         net (fo=42, routed)          0.772    10.518    vs0/pikachu_usr_region
+    SLICE_X7Y26          CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.803    11.321 r  vs0/pixel_addr_pikachu_reg[7]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    11.321    vs0/pixel_addr_pikachu_reg[7]_i_10_n_0
+    SLICE_X7Y27          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.655 r  vs0/pixel_addr_pikachu_reg[11]_i_10/O[1]
+                         net (fo=2, routed)           0.652    12.307    vs0/pixel_addr_pikachu_reg[11]_i_10_n_6
+    SLICE_X9Y29          LUT4 (Prop_lut4_I2_O)        0.303    12.610 r  vs0/pixel_addr_pikachu[7]_i_3/O
+                         net (fo=2, routed)           0.528    13.138    vs0/pixel_addr_pikachu[7]_i_3_n_0
+    SLICE_X8Y29          LUT6 (Prop_lut6_I0_O)        0.124    13.262 r  vs0/pixel_addr_pikachu[7]_i_7/O
+                         net (fo=1, routed)           0.000    13.262    vs0/pixel_addr_pikachu[7]_i_7_n_0
+    SLICE_X8Y29          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.642 r  vs0/pixel_addr_pikachu_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.642    vs0/pixel_addr_pikachu_reg[7]_i_1_n_0
+    SLICE_X8Y30          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    13.965 r  vs0/pixel_addr_pikachu_reg[11]_i_1/O[1]
+                         net (fo=1, routed)           0.000    13.965    pixel_addr_pikachu[9]
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[9]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y30          FDRE (Setup_fdre_C_D)        0.109    15.146    pixel_addr_pikachu_reg[9]
+  -------------------------------------------------------------------
+                         required time                         15.146    
+                         arrival time                         -13.965    
+  -------------------------------------------------------------------
+                         slack                                  1.182    
+
+Slack (MET) :             1.190ns  (required time - arrival time)
+  Source:                 pikachu_usr_vpos_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixel_addr_pikachu_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.841ns  (logic 3.871ns (43.784%)  route 4.970ns (56.216%))
+  Logic Levels:           10  (CARRY4=5 LUT4=2 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.043ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.116ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.564     5.116    clk_IBUF_BUFG
+    SLICE_X10Y15         FDSE                                         r  pikachu_usr_vpos_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y15         FDSE (Prop_fdse_C_Q)         0.518     5.634 r  pikachu_usr_vpos_reg[6]/Q
+                         net (fo=19, routed)          1.264     6.898    vs0/usr_y_pixel_count_reg[5]
+    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     7.022 r  vs0/pixel_addr_pikachu[13]_i_116/O
+                         net (fo=3, routed)           0.686     7.708    vs0/pixel_addr_pikachu[13]_i_116_n_0
+    SLICE_X11Y29         LUT5 (Prop_lut5_I3_O)        0.124     7.832 r  vs0/pixel_addr_pikachu[13]_i_68/O
+                         net (fo=1, routed)           0.000     7.832    vs0/pixel_addr_pikachu[13]_i_68_n_0
+    SLICE_X11Y29         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.323 f  vs0/pixel_addr_pikachu_reg[13]_i_26/CO[1]
+                         net (fo=15, routed)          1.069     9.391    vs0/pixel_addr_pikachu_reg[13]_i_26_n_2
+    SLICE_X5Y28          LUT4 (Prop_lut4_I3_O)        0.355     9.746 r  vs0/pixel_addr_pikachu[13]_i_7/O
+                         net (fo=42, routed)          0.772    10.518    vs0/pikachu_usr_region
+    SLICE_X7Y26          CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.803    11.321 r  vs0/pixel_addr_pikachu_reg[7]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    11.321    vs0/pixel_addr_pikachu_reg[7]_i_10_n_0
+    SLICE_X7Y27          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.655 r  vs0/pixel_addr_pikachu_reg[11]_i_10/O[1]
+                         net (fo=2, routed)           0.652    12.307    vs0/pixel_addr_pikachu_reg[11]_i_10_n_6
+    SLICE_X9Y29          LUT4 (Prop_lut4_I2_O)        0.303    12.610 r  vs0/pixel_addr_pikachu[7]_i_3/O
+                         net (fo=2, routed)           0.528    13.138    vs0/pixel_addr_pikachu[7]_i_3_n_0
+    SLICE_X8Y29          LUT6 (Prop_lut6_I0_O)        0.124    13.262 r  vs0/pixel_addr_pikachu[7]_i_7/O
+                         net (fo=1, routed)           0.000    13.262    vs0/pixel_addr_pikachu[7]_i_7_n_0
+    SLICE_X8Y29          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.642 r  vs0/pixel_addr_pikachu_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.642    vs0/pixel_addr_pikachu_reg[7]_i_1_n_0
+    SLICE_X8Y30          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.315    13.957 r  vs0/pixel_addr_pikachu_reg[11]_i_1/O[3]
+                         net (fo=1, routed)           0.000    13.957    pixel_addr_pikachu[11]
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[11]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y30          FDRE (Setup_fdre_C_D)        0.109    15.146    pixel_addr_pikachu_reg[11]
+  -------------------------------------------------------------------
+                         required time                         15.146    
+                         arrival time                         -13.957    
+  -------------------------------------------------------------------
+                         slack                                  1.190    
+
+Slack (MET) :             1.252ns  (required time - arrival time)
+  Source:                 pikachu_opp_hpos_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            smash_enable_opp_reg/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.396ns  (logic 2.220ns (26.441%)  route 6.176ns (73.559%))
+  Logic Levels:           8  (CARRY4=1 LUT2=1 LUT3=1 LUT4=1 LUT5=3 LUT6=1)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.810ns = ( 14.810 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.106ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.554     5.106    clk_IBUF_BUFG
+    SLICE_X10Y22         FDRE                                         r  pikachu_opp_hpos_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y22         FDRE (Prop_fdre_C_Q)         0.518     5.624 r  pikachu_opp_hpos_reg[1]/Q
+                         net (fo=45, routed)          0.894     6.518    db1/ball_hdir_i_23[1]
+    SLICE_X8Y22          LUT6 (Prop_lut6_I2_O)        0.124     6.642 r  db1/ball_hdir_i_44/O
+                         net (fo=12, routed)          0.696     7.338    db1/pikachu_opp_hpos_reg[5]
+    SLICE_X9Y22          LUT4 (Prop_lut4_I1_O)        0.152     7.490 r  db1/ball_hdir_i_42/O
+                         net (fo=7, routed)           0.835     8.325    db1/pikachu_opp_hpos_reg[6]
+    SLICE_X3Y23          LUT2 (Prop_lut2_I0_O)        0.332     8.657 r  db1/ball_hspeed[2]_i_87/O
+                         net (fo=1, routed)           0.000     8.657    db1/ball_hspeed[2]_i_87_n_0
+    SLICE_X3Y23          CARRY4 (Prop_carry4_S[0]_O[1])
+                                                      0.424     9.081 f  db1/ball_hspeed_reg[2]_i_26/O[1]
+                         net (fo=1, routed)           0.717     9.799    db1/ball_hspeed_reg[2]_i_26_n_6
+    SLICE_X3Y24          LUT5 (Prop_lut5_I1_O)        0.303    10.102 f  db1/ball_hspeed[2]_i_11/O
+                         net (fo=1, routed)           0.714    10.816    db1/ball_hspeed[2]_i_11_n_0
+    SLICE_X2Y20          LUT5 (Prop_lut5_I1_O)        0.124    10.940 r  db1/ball_hspeed[2]_i_4/O
+                         net (fo=4, routed)           0.631    11.571    db1/h_touch_opp
+    SLICE_X2Y19          LUT5 (Prop_lut5_I0_O)        0.124    11.695 r  db1/ball_hspeed[3]_i_3/O
+                         net (fo=7, routed)           1.137    12.832    opp_smash
+    SLICE_X13Y28         LUT3 (Prop_lut3_I1_O)        0.119    12.951 r  smash_enable_opp_i_1/O
+                         net (fo=1, routed)           0.551    13.502    smash_enable_opp_i_1_n_0
+    SLICE_X13Y26         FDRE                                         r  smash_enable_opp_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.438    14.810    clk_IBUF_BUFG
+    SLICE_X13Y26         FDRE                                         r  smash_enable_opp_reg/C
+                         clock pessimism              0.259    15.069    
+                         clock uncertainty           -0.035    15.033    
+    SLICE_X13Y26         FDRE (Setup_fdre_C_D)       -0.279    14.754    smash_enable_opp_reg
+  -------------------------------------------------------------------
+                         required time                         14.754    
+                         arrival time                         -13.502    
+  -------------------------------------------------------------------
+                         slack                                  1.252    
+
+Slack (MET) :             1.266ns  (required time - arrival time)
+  Source:                 pikachu_usr_vpos_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixel_addr_pikachu_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.765ns  (logic 3.795ns (43.297%)  route 4.970ns (56.703%))
+  Logic Levels:           10  (CARRY4=5 LUT4=2 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.043ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.116ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.564     5.116    clk_IBUF_BUFG
+    SLICE_X10Y15         FDSE                                         r  pikachu_usr_vpos_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y15         FDSE (Prop_fdse_C_Q)         0.518     5.634 r  pikachu_usr_vpos_reg[6]/Q
+                         net (fo=19, routed)          1.264     6.898    vs0/usr_y_pixel_count_reg[5]
+    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     7.022 r  vs0/pixel_addr_pikachu[13]_i_116/O
+                         net (fo=3, routed)           0.686     7.708    vs0/pixel_addr_pikachu[13]_i_116_n_0
+    SLICE_X11Y29         LUT5 (Prop_lut5_I3_O)        0.124     7.832 r  vs0/pixel_addr_pikachu[13]_i_68/O
+                         net (fo=1, routed)           0.000     7.832    vs0/pixel_addr_pikachu[13]_i_68_n_0
+    SLICE_X11Y29         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.323 f  vs0/pixel_addr_pikachu_reg[13]_i_26/CO[1]
+                         net (fo=15, routed)          1.069     9.391    vs0/pixel_addr_pikachu_reg[13]_i_26_n_2
+    SLICE_X5Y28          LUT4 (Prop_lut4_I3_O)        0.355     9.746 r  vs0/pixel_addr_pikachu[13]_i_7/O
+                         net (fo=42, routed)          0.772    10.518    vs0/pikachu_usr_region
+    SLICE_X7Y26          CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.803    11.321 r  vs0/pixel_addr_pikachu_reg[7]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    11.321    vs0/pixel_addr_pikachu_reg[7]_i_10_n_0
+    SLICE_X7Y27          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.655 r  vs0/pixel_addr_pikachu_reg[11]_i_10/O[1]
+                         net (fo=2, routed)           0.652    12.307    vs0/pixel_addr_pikachu_reg[11]_i_10_n_6
+    SLICE_X9Y29          LUT4 (Prop_lut4_I2_O)        0.303    12.610 r  vs0/pixel_addr_pikachu[7]_i_3/O
+                         net (fo=2, routed)           0.528    13.138    vs0/pixel_addr_pikachu[7]_i_3_n_0
+    SLICE_X8Y29          LUT6 (Prop_lut6_I0_O)        0.124    13.262 r  vs0/pixel_addr_pikachu[7]_i_7/O
+                         net (fo=1, routed)           0.000    13.262    vs0/pixel_addr_pikachu[7]_i_7_n_0
+    SLICE_X8Y29          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.642 r  vs0/pixel_addr_pikachu_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.642    vs0/pixel_addr_pikachu_reg[7]_i_1_n_0
+    SLICE_X8Y30          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239    13.881 r  vs0/pixel_addr_pikachu_reg[11]_i_1/O[2]
+                         net (fo=1, routed)           0.000    13.881    pixel_addr_pikachu[10]
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[10]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y30          FDRE (Setup_fdre_C_D)        0.109    15.146    pixel_addr_pikachu_reg[10]
+  -------------------------------------------------------------------
+                         required time                         15.146    
+                         arrival time                         -13.881    
+  -------------------------------------------------------------------
+                         slack                                  1.266    
+
+Slack (MET) :             1.270ns  (required time - arrival time)
+  Source:                 pikachu_opp_hpos_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ball_vspeed_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.630ns  (logic 2.545ns (29.489%)  route 6.085ns (70.511%))
+  Logic Levels:           9  (CARRY4=1 LUT2=1 LUT4=1 LUT5=4 LUT6=2)
+  Clock Path Skew:        -0.033ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.106ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.554     5.106    clk_IBUF_BUFG
+    SLICE_X10Y22         FDRE                                         r  pikachu_opp_hpos_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y22         FDRE (Prop_fdre_C_Q)         0.518     5.624 r  pikachu_opp_hpos_reg[1]/Q
+                         net (fo=45, routed)          0.894     6.518    db1/ball_hdir_i_23[1]
+    SLICE_X8Y22          LUT6 (Prop_lut6_I2_O)        0.124     6.642 r  db1/ball_hdir_i_44/O
+                         net (fo=12, routed)          0.696     7.338    db1/pikachu_opp_hpos_reg[5]
+    SLICE_X9Y22          LUT4 (Prop_lut4_I1_O)        0.152     7.490 r  db1/ball_hdir_i_42/O
+                         net (fo=7, routed)           0.835     8.325    db1/pikachu_opp_hpos_reg[6]
+    SLICE_X3Y23          LUT2 (Prop_lut2_I0_O)        0.332     8.657 r  db1/ball_hspeed[2]_i_87/O
+                         net (fo=1, routed)           0.000     8.657    db1/ball_hspeed[2]_i_87_n_0
+    SLICE_X3Y23          CARRY4 (Prop_carry4_S[0]_O[1])
+                                                      0.424     9.081 f  db1/ball_hspeed_reg[2]_i_26/O[1]
+                         net (fo=1, routed)           0.717     9.799    db1/ball_hspeed_reg[2]_i_26_n_6
+    SLICE_X3Y24          LUT5 (Prop_lut5_I1_O)        0.303    10.102 f  db1/ball_hspeed[2]_i_11/O
+                         net (fo=1, routed)           0.714    10.816    db1/ball_hspeed[2]_i_11_n_0
+    SLICE_X2Y20          LUT5 (Prop_lut5_I1_O)        0.124    10.940 r  db1/ball_hspeed[2]_i_4/O
+                         net (fo=4, routed)           0.786    11.726    db1/h_touch_opp
+    SLICE_X2Y19          LUT6 (Prop_lut6_I4_O)        0.124    11.850 r  db1/ball_vspeed[5]_i_4/O
+                         net (fo=7, routed)           0.432    12.282    db1/ball_vspeed1
+    SLICE_X7Y19          LUT5 (Prop_lut5_I4_O)        0.118    12.400 r  db1/ball_vspeed[2]_i_2/O
+                         net (fo=1, routed)           0.680    13.080    db1/ball_vspeed[2]_i_2_n_0
+    SLICE_X8Y19          LUT5 (Prop_lut5_I0_O)        0.326    13.406 r  db1/ball_vspeed[2]_i_1/O
+                         net (fo=1, routed)           0.330    13.736    db1_n_9
+    SLICE_X8Y20          FDRE                                         r  ball_vspeed_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y20          FDRE                                         r  ball_vspeed_reg[2]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y20          FDRE (Setup_fdre_C_D)       -0.031    15.006    ball_vspeed_reg[2]
+  -------------------------------------------------------------------
+                         required time                         15.006    
+                         arrival time                         -13.736    
+  -------------------------------------------------------------------
+                         slack                                  1.270    
+
+Slack (MET) :             1.286ns  (required time - arrival time)
+  Source:                 pikachu_usr_vpos_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixel_addr_pikachu_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.745ns  (logic 3.775ns (43.167%)  route 4.970ns (56.833%))
+  Logic Levels:           10  (CARRY4=5 LUT4=2 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.043ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.814ns = ( 14.814 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.116ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.455    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.551 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.564     5.116    clk_IBUF_BUFG
+    SLICE_X10Y15         FDSE                                         r  pikachu_usr_vpos_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y15         FDSE (Prop_fdse_C_Q)         0.518     5.634 r  pikachu_usr_vpos_reg[6]/Q
+                         net (fo=19, routed)          1.264     6.898    vs0/usr_y_pixel_count_reg[5]
+    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     7.022 r  vs0/pixel_addr_pikachu[13]_i_116/O
+                         net (fo=3, routed)           0.686     7.708    vs0/pixel_addr_pikachu[13]_i_116_n_0
+    SLICE_X11Y29         LUT5 (Prop_lut5_I3_O)        0.124     7.832 r  vs0/pixel_addr_pikachu[13]_i_68/O
+                         net (fo=1, routed)           0.000     7.832    vs0/pixel_addr_pikachu[13]_i_68_n_0
+    SLICE_X11Y29         CARRY4 (Prop_carry4_S[1]_CO[1])
+                                                      0.491     8.323 f  vs0/pixel_addr_pikachu_reg[13]_i_26/CO[1]
+                         net (fo=15, routed)          1.069     9.391    vs0/pixel_addr_pikachu_reg[13]_i_26_n_2
+    SLICE_X5Y28          LUT4 (Prop_lut4_I3_O)        0.355     9.746 r  vs0/pixel_addr_pikachu[13]_i_7/O
+                         net (fo=42, routed)          0.772    10.518    vs0/pikachu_usr_region
+    SLICE_X7Y26          CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.803    11.321 r  vs0/pixel_addr_pikachu_reg[7]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    11.321    vs0/pixel_addr_pikachu_reg[7]_i_10_n_0
+    SLICE_X7Y27          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    11.655 r  vs0/pixel_addr_pikachu_reg[11]_i_10/O[1]
+                         net (fo=2, routed)           0.652    12.307    vs0/pixel_addr_pikachu_reg[11]_i_10_n_6
+    SLICE_X9Y29          LUT4 (Prop_lut4_I2_O)        0.303    12.610 r  vs0/pixel_addr_pikachu[7]_i_3/O
+                         net (fo=2, routed)           0.528    13.138    vs0/pixel_addr_pikachu[7]_i_3_n_0
+    SLICE_X8Y29          LUT6 (Prop_lut6_I0_O)        0.124    13.262 r  vs0/pixel_addr_pikachu[7]_i_7/O
+                         net (fo=1, routed)           0.000    13.262    vs0/pixel_addr_pikachu[7]_i_7_n_0
+    SLICE_X8Y29          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.642 r  vs0/pixel_addr_pikachu_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    13.642    vs0/pixel_addr_pikachu_reg[7]_i_1_n_0
+    SLICE_X8Y30          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219    13.861 r  vs0/pixel_addr_pikachu_reg[11]_i_1/O[0]
+                         net (fo=1, routed)           0.000    13.861    pixel_addr_pikachu[8]
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    11.418 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.371 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         1.442    14.814    clk_IBUF_BUFG
+    SLICE_X8Y30          FDRE                                         r  pixel_addr_pikachu_reg[8]/C
+                         clock pessimism              0.259    15.073    
+                         clock uncertainty           -0.035    15.037    
+    SLICE_X8Y30          FDRE (Setup_fdre_C_D)        0.109    15.146    pixel_addr_pikachu_reg[8]
+  -------------------------------------------------------------------
+                         required time                         15.146    
+                         arrival time                         -13.861    
+  -------------------------------------------------------------------
+                         slack                                  1.286    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[4]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_A/ADR4
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.281ns  (logic 0.141ns (50.189%)  route 0.140ns (49.811%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[4]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[4]_rep/Q
+                         net (fo=192, routed)         0.140     1.758    ram_ball/RAM_reg_512_767_6_6/A4
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_A/ADR4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_A/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR4)
+                                                      0.200     1.690    ram_ball/RAM_reg_512_767_6_6/RAMS64E_A
+  -------------------------------------------------------------------
+                         required time                         -1.690    
+                         arrival time                           1.758    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[4]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_B/ADR4
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.281ns  (logic 0.141ns (50.189%)  route 0.140ns (49.811%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[4]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[4]_rep/Q
+                         net (fo=192, routed)         0.140     1.758    ram_ball/RAM_reg_512_767_6_6/A4
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_B/ADR4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_B/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR4)
+                                                      0.200     1.690    ram_ball/RAM_reg_512_767_6_6/RAMS64E_B
+  -------------------------------------------------------------------
+                         required time                         -1.690    
+                         arrival time                           1.758    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[4]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_C/ADR4
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.281ns  (logic 0.141ns (50.189%)  route 0.140ns (49.811%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[4]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[4]_rep/Q
+                         net (fo=192, routed)         0.140     1.758    ram_ball/RAM_reg_512_767_6_6/A4
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_C/ADR4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_C/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR4)
+                                                      0.200     1.690    ram_ball/RAM_reg_512_767_6_6/RAMS64E_C
+  -------------------------------------------------------------------
+                         required time                         -1.690    
+                         arrival time                           1.758    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[4]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_D/ADR4
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.281ns  (logic 0.141ns (50.189%)  route 0.140ns (49.811%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[4]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[4]_rep/Q
+                         net (fo=192, routed)         0.140     1.758    ram_ball/RAM_reg_512_767_6_6/A4
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_D/ADR4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_D/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR4)
+                                                      0.200     1.690    ram_ball/RAM_reg_512_767_6_6/RAMS64E_D
+  -------------------------------------------------------------------
+                         required time                         -1.690    
+                         arrival time                           1.758    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.070ns  (arrival time - required time)
+  Source:                 pixel_addr_nums_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_nums/RAM_reg_0/ADDRARDADDR[12]
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.330ns  (logic 0.141ns (42.770%)  route 0.189ns (57.230%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.076ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.029ns
+    Source Clock Delay      (SCD):    1.474ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.561     1.474    clk_IBUF_BUFG
+    SLICE_X11Y18         FDRE                                         r  pixel_addr_nums_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y18         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  pixel_addr_nums_reg[11]/Q
+                         net (fo=5, routed)           0.189     1.804    ram_nums/Q[11]
+    RAMB36_X0Y3          RAMB36E1                                     r  ram_nums/RAM_reg_0/ADDRARDADDR[12]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.871     2.029    ram_nums/clk_IBUF_BUFG
+    RAMB36_X0Y3          RAMB36E1                                     r  ram_nums/RAM_reg_0/CLKARDCLK
+                         clock pessimism             -0.479     1.551    
+    RAMB36_X0Y3          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[12])
+                                                      0.183     1.734    ram_nums/RAM_reg_0
+  -------------------------------------------------------------------
+                         required time                         -1.734    
+                         arrival time                           1.804    
+  -------------------------------------------------------------------
+                         slack                                  0.070    
+
+Slack (MET) :             0.072ns  (arrival time - required time)
+  Source:                 pixel_addr_nums_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_nums/RAM_reg_0/ADDRARDADDR[4]
+                            (rising edge-triggered cell RAMB36E1 clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.330ns  (logic 0.141ns (42.770%)  route 0.189ns (57.230%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.074ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.029ns
+    Source Clock Delay      (SCD):    1.476ns
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.563     1.476    clk_IBUF_BUFG
+    SLICE_X11Y16         FDRE                                         r  pixel_addr_nums_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y16         FDRE (Prop_fdre_C_Q)         0.141     1.617 r  pixel_addr_nums_reg[3]/Q
+                         net (fo=5, routed)           0.189     1.806    ram_nums/Q[3]
+    RAMB36_X0Y3          RAMB36E1                                     r  ram_nums/RAM_reg_0/ADDRARDADDR[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.871     2.029    ram_nums/clk_IBUF_BUFG
+    RAMB36_X0Y3          RAMB36E1                                     r  ram_nums/RAM_reg_0/CLKARDCLK
+                         clock pessimism             -0.479     1.551    
+    RAMB36_X0Y3          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[4])
+                                                      0.183     1.734    ram_nums/RAM_reg_0
+  -------------------------------------------------------------------
+                         required time                         -1.734    
+                         arrival time                           1.806    
+  -------------------------------------------------------------------
+                         slack                                  0.072    
+
+Slack (MET) :             0.074ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[0]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_A/ADR0
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.397ns  (logic 0.141ns (35.507%)  route 0.256ns (64.493%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[0]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[0]_rep/Q
+                         net (fo=200, routed)         0.256     1.874    ram_ball/RAM_reg_512_767_6_6/A0
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_A/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_A/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR0)
+                                                      0.310     1.800    ram_ball/RAM_reg_512_767_6_6/RAMS64E_A
+  -------------------------------------------------------------------
+                         required time                         -1.800    
+                         arrival time                           1.874    
+  -------------------------------------------------------------------
+                         slack                                  0.074    
+
+Slack (MET) :             0.074ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[0]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_B/ADR0
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.397ns  (logic 0.141ns (35.507%)  route 0.256ns (64.493%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[0]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[0]_rep/Q
+                         net (fo=200, routed)         0.256     1.874    ram_ball/RAM_reg_512_767_6_6/A0
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_B/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_B/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR0)
+                                                      0.310     1.800    ram_ball/RAM_reg_512_767_6_6/RAMS64E_B
+  -------------------------------------------------------------------
+                         required time                         -1.800    
+                         arrival time                           1.874    
+  -------------------------------------------------------------------
+                         slack                                  0.074    
+
+Slack (MET) :             0.074ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[0]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_C/ADR0
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.397ns  (logic 0.141ns (35.507%)  route 0.256ns (64.493%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[0]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[0]_rep/Q
+                         net (fo=200, routed)         0.256     1.874    ram_ball/RAM_reg_512_767_6_6/A0
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_C/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_C/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR0)
+                                                      0.310     1.800    ram_ball/RAM_reg_512_767_6_6/RAMS64E_C
+  -------------------------------------------------------------------
+                         required time                         -1.800    
+                         arrival time                           1.874    
+  -------------------------------------------------------------------
+                         slack                                  0.074    
+
+Slack (MET) :             0.074ns  (arrival time - required time)
+  Source:                 pixel_addr_ball_reg[0]_rep/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ram_ball/RAM_reg_512_767_6_6/RAMS64E_D/ADR0
+                            (rising edge-triggered cell RAMS64E clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.397ns  (logic 0.141ns (35.507%)  route 0.256ns (64.493%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.477ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.888    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.914 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.564     1.477    clk_IBUF_BUFG
+    SLICE_X11Y35         FDRE                                         r  pixel_addr_ball_reg[0]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y35         FDRE (Prop_fdre_C_Q)         0.141     1.618 r  pixel_addr_ball_reg[0]_rep/Q
+                         net (fo=200, routed)         0.256     1.874    ram_ball/RAM_reg_512_767_6_6/A0
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_D/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.129    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.158 r  clk_IBUF_BUFG_inst/O
+                         net (fo=934, routed)         0.833     1.991    ram_ball/RAM_reg_512_767_6_6/WCLK
+    SLICE_X10Y35         RAMS64E                                      r  ram_ball/RAM_reg_512_767_6_6/RAMS64E_D/CLK
+                         clock pessimism             -0.501     1.490    
+    SLICE_X10Y35         RAMS64E (Hold_rams64e_CLK_ADR0)
+                                                      0.310     1.800    ram_ball/RAM_reg_512_767_6_6/RAMS64E_D
+  -------------------------------------------------------------------
+                         required time                         -1.800    
+                         arrival time                           1.874    
+  -------------------------------------------------------------------
+                         slack                                  0.074    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y9   ram_background/RAM_reg_0_0/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y11  ram_background/RAM_reg_0_1/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y3   ram_background/RAM_reg_0_10/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X0Y7   ram_background/RAM_reg_0_11/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y15  ram_background/RAM_reg_0_2/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X2Y14  ram_background/RAM_reg_0_3/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X2Y9   ram_background/RAM_reg_0_4/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X2Y2   ram_background/RAM_reg_0_5/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X2Y4   ram_background/RAM_reg_0_6/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.892         10.000      7.108      RAMB36_X1Y5   ram_background/RAM_reg_0_7/CLKARDCLK
+Low Pulse Width   Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/HIGH/CLK
+Low Pulse Width   Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/HIGH/CLK
+Low Pulse Width   Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/LOW/CLK
+Low Pulse Width   Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/LOW/CLK
+Low Pulse Width   Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/HIGH/CLK
+Low Pulse Width   Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/HIGH/CLK
+Low Pulse Width   Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/LOW/CLK
+Low Pulse Width   Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/LOW/CLK
+Low Pulse Width   Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y41   ram_ball/RAM_reg_0_127_0_0__1/HIGH/CLK
+Low Pulse Width   Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y41   ram_ball/RAM_reg_0_127_0_0__1/HIGH/CLK
+High Pulse Width  Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/HIGH/CLK
+High Pulse Width  Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/HIGH/CLK
+High Pulse Width  Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/LOW/CLK
+High Pulse Width  Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0/LOW/CLK
+High Pulse Width  Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/HIGH/CLK
+High Pulse Width  Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/HIGH/CLK
+High Pulse Width  Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/LOW/CLK
+High Pulse Width  Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y38   ram_ball/RAM_reg_0_127_0_0__0/LOW/CLK
+High Pulse Width  Slow    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y41   ram_ball/RAM_reg_0_127_0_0__1/HIGH/CLK
+High Pulse Width  Fast    RAMS64E/CLK         n/a            1.250         5.000       3.750      SLICE_X6Y41   ram_ball/RAM_reg_0_127_0_0__1/HIGH/CLK
+
+
+
