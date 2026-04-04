@@ -10,7 +10,7 @@
 ## Structure
 
 >Top Module: The main logic is in `fp_pikachu_volleyball.v`\
->There are multiple mem files to store images data to display on VGA.\
+>There are multiple mem files to store images data to be displayed on VGA.\
 >Part of this and some other files are based on the sample codes of Lab10 in Digital Circuit Lab 114-1 in NYCU-CS.
 
 ## Description
