@@ -10,6 +10,13 @@
 .sim/
 .gen/
 .srcs/
+*.cache/
+*.hw/
+*.runs/
+*.sim/
+*.gen/
+*.srcs/
+*.ip_user_files/
 
 # --- IP 產生檔（保留 .xci，忽略輸出）---
 */ip/*/*_sim_netlist.v
