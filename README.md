@@ -5,6 +5,11 @@
 >This is the final project of the course Digital Circuit Lab 114-1 in NYCU-CS. Finished at 2025/12/01.
 >Reorganized at 2026/04/04
 
+#### Statement
+
+>The source code is once stolen by a person with malicious intension before its publicization.
+>It is strongly prohibited to steal the code, modify by AI tools, and state it to be yours.
+
 ---
 
 ## Structure
@@ -18,8 +23,8 @@
 ### Rules
 
 * The ball is always served at the middle above the net.
-* Every time the ball touches the ground, it stall for a while and return to the serving point and update the score.
-* The one gets 9 pts first is the winner.
+* Every time the ball touches the ground, it stalls for a while, returns to the serving point and the scoreboard is updated.
+* The one getting 9 pts first is the winner.
 * When Switch3 is down, the game start. Pull up and down again to restart the game when game set.
 
 ### How to play
