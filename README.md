@@ -7,7 +7,7 @@
 
 #### Statement
 
->The source code is once stolen by a person with malicious intension before its publicization.
+>The source code is once stolen by a person with malicious intention before its publicization.
 >It is strongly prohibited to steal the code, modify using AI tools, and state it to be yours.
 
 ---
